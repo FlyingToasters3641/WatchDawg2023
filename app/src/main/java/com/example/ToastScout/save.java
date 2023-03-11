@@ -84,13 +84,13 @@ public class save extends Fragment implements View.OnClickListener{
                     }
 
                     if (MainActivity.TeleopEngaged == 1){
-                        autoChargeStation = "Engaged";
+                        teleopChargeStation = "Engaged";
                     } else if (MainActivity.TeleopDocked == 1 ){
-                        autoChargeStation = "Docked";
+                        teleopChargeStation = "Docked";
                     } else if (MainActivity.Parking == 1){
-                        autoChargeStation = "In community";
+                        teleopChargeStation = "In community";
                     } else if (MainActivity.NotInCommunity == 1){
-                        autoChargeStation = "Not in Community";
+                        teleopChargeStation = "Not in Community";
                     }else {
                         attemptedCharge = false;
                     }
@@ -99,28 +99,32 @@ public class save extends Fragment implements View.OnClickListener{
                     System.out.println(e.getMessage());
                 }
                 Boolean mobility = false;
-                if (MainActivity.mobility == 1){mobility = true;} else {mobility = false;};
+                if (MainActivity.mobility == 1){mobility = true;} else {mobility = false;}
 
                 Boolean parking = false;
-                if (MainActivity.Parking == 1){parking = true;} else {parking = false;};
+                if (MainActivity.Parking == 1){parking = true;} else {parking = false;}
 
                 Boolean gP = false;
-                if (MainActivity.groundPickup == 1){gP = true;} else {gP = false;};
+                if (MainActivity.groundPickup == 1){gP = true;} else {gP = false;}
 
                 Boolean pS = false;
-                if (MainActivity.playerStation == 1){pS = true;} else {pS = false;};
+                if (MainActivity.playerStation == 1){pS = true;} else {pS = false;}
 
                 Boolean pD = false;
-                if (MainActivity.playedDefense == 1){pD = true;} else {pD = false;};
+                if (MainActivity.playedDefense == 1){pD = true;} else {pD = false;}
 
                 Boolean pScore = false;
-                if (MainActivity.preventsScoring == 1){pScore = true;} else {pScore = false;};
+                if (MainActivity.preventsScoring == 1){pScore = true;} else {pScore = false;}
 
                 Boolean dO = false;
-                if (MainActivity.preventsScoring == 1){dO = true;} else {dO = false;};
+                if (MainActivity.preventsScoring == 1){dO = true;} else {dO = false;}
 
                 Boolean eD = false;
-                if (MainActivity.effectiveDefense == 1){eD = true;} else {eD = false;};
+                if (MainActivity.effectiveDefense == 1){eD = true;} else {eD = false;}
+
+                Boolean aACS = false;
+                if (MainActivity.AutoChargeAttempt == 1){aACS = true;} else {aACS = false;}
+
 
 
                 data = "{" +
@@ -131,7 +135,7 @@ public class save extends Fragment implements View.OnClickListener{
                         "\"tN\":\"" + MainActivity.teamNumber + "\"," +
                         "\"mOC\":\"" + bSB(mobility) + "\"," +
                         "\"aACS\":\"" + bSB(attemptedChargeAuto) + "\"," +
-                        "\"aCS\":\"" + autoChargeStation + "\"," +
+                        "\"aCS\":\"" + bSB(aACS) + "\"," +
                         "\"aTCS\":\"" + bSB(attemptedCharge) + "\"," +
                         "\"tCS\":\"" + teleopChargeStation + "\"," +
                         "\"pFG\":\"" + bSB(gP) + "\"," +
@@ -181,7 +185,9 @@ public class save extends Fragment implements View.OnClickListener{
                 break;
             case R.id.newMatch2:
                 Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                MainActivity.eventKey = HomeScreen.eventKeyText.getText().toString();
                 break;
 
             case R.id.saveFile2:

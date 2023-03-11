@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
     public static int groundPickup = 0;
     public static int playerStation = 0;
 
+    public static int AutoChargeAttempt = 0;
+
     public static int[] autoUpperNodes = {0,0,0,0,0,0,0,0,0};
     public static int[] autoMiddleNodes = {0,0,0,0,0,0,0,0,0};
     public static int[] autoHybridNodes = {0,0,0,0,0,0,0,0,0};
@@ -102,12 +104,67 @@ public class MainActivity extends AppCompatActivity {
 
         AutoDocked = 0;
         AutoEngaged = 0;
+        AutoChargeAttempt = 0;
         Parking = 0;
         NotInCommunity = 0;
         TeleopDocked = 0;
         TeleopEngaged = 0;
 
+        autoUpperNodes = new int[]{0,0,0,0,0,0,0,0,0};
+        autoMiddleNodes = new int[]{0,0,0,0,0,0,0,0,0};
+        autoHybridNodes = new int[]{0,0,0,0,0,0,0,0,0};
+
+        teleopUpperNodes = new int[]{0,0,0,0,0,0,0,0,0};
+        teleopMiddleNodes = new int[]{0,0,0,0,0,0,0,0,0};
+        teleopHybridNodes = new int[]{0,0,0,0,0,0,0,0,0};
         
+    }
+
+    @Override
+    public void recreate() {
+        setContentView(R.layout.activity_main);
+
+
+        tabLayout = findViewById(R.id.tabs);
+        viewPager = findViewById(R.id.view_pager);
+
+        tabLayout.setupWithViewPager(viewPager);
+
+        VPadapter vpAdapter = new VPadapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+
+        vpAdapter.addFragment(new Auto(), "Auto");
+        vpAdapter.addFragment(new Teleop(), "Teleop");
+        vpAdapter.addFragment(new endgame(), "Endgame");
+        vpAdapter.addFragment(new save(), "Save");
+        viewPager.setAdapter(vpAdapter);
+
+        teamNumText = (EditText) findViewById(R.id.teamNum);
+        matchNumText = (EditText) findViewById(R.id.matchNum);
+        scoutNameText = (EditText) findViewById(R.id.name);
+
+        mobility = 0;
+        playedDefense = 0;
+        effectiveDefense = 0;
+        preventsScoring = 0;
+        defendsOften = 0;
+
+        groundPickup = 0;
+        playerStation = 0;
+
+        AutoDocked = 0;
+        AutoEngaged = 0;
+        Parking = 0;
+        NotInCommunity = 0;
+        TeleopDocked = 0;
+        TeleopEngaged = 0;
+
+        autoUpperNodes = new int[]{0,0,0,0,0,0,0,0,0};
+        autoMiddleNodes = new int[]{0,0,0,0,0,0,0,0,0};
+        autoHybridNodes = new int[]{0,0,0,0,0,0,0,0,0};
+
+        teleopUpperNodes = new int[]{0,0,0,0,0,0,0,0,0};
+        teleopMiddleNodes = new int[]{0,0,0,0,0,0,0,0,0};
+        teleopHybridNodes = new int[]{0,0,0,0,0,0,0,0,0};
     }
 
     public static void editMatchData(int ind0, int ind1, int value) {
