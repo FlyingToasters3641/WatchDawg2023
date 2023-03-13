@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
     public static int TeleopDocked = 0;
     public static int TeleopEngaged = 0;
 
+    public static int TeleopChargeAttempt = 0;
+
     public static int groundPickup = 0;
     public static int playerStation = 0;
 
@@ -109,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         NotInCommunity = 0;
         TeleopDocked = 0;
         TeleopEngaged = 0;
+        TeleopChargeAttempt = 0;
 
         autoUpperNodes = new int[]{0,0,0,0,0,0,0,0,0};
         autoMiddleNodes = new int[]{0,0,0,0,0,0,0,0,0};
@@ -151,6 +154,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.playerStationCheckBox:
                 MainActivity.playerStation = checked ? 1 : 0;
+                break;
+            case R.id.TeleOpChargeAttempt:
+                MainActivity.TeleopChargeAttempt = checked ? 1 : 0;
                 break;
 
         }
