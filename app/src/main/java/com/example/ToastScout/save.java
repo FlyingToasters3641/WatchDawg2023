@@ -134,8 +134,8 @@ public class save extends Fragment implements View.OnClickListener{
                         "\"p\":\"" + Auto.alliancePos.getSelectedItem().toString() + "\"," +
                         "\"tN\":\"" + MainActivity.teamNumber + "\"," +
                         "\"mOC\":\"" + bSB(mobility) + "\"," +
-                        "\"aACS\":\"" + bSB(attemptedChargeAuto) + "\"," +
-                        "\"aCS\":\"" + bSB(aACS) + "\"," +
+                        "\"aACS\":\"" + bSB(aACS) + "\"," +
+                        "\"aCS\":\"" + autoChargeStation + "\"," +
                         "\"aTCS\":\"" + bSB(attemptedCharge) + "\"," +
                         "\"tCS\":\"" + teleopChargeStation + "\"," +
                         "\"pFG\":\"" + bSB(gP) + "\"," +
@@ -192,11 +192,9 @@ public class save extends Fragment implements View.OnClickListener{
 
             case R.id.saveFile2:
                 //Get text field values
-//        teamNumber = 0;
-//        matchNumber = 0;
 
 
-                try {
+                try{
                     if (MainActivity.teamNumText.getText().toString() != null) {
                         MainActivity.teamNumber = MainActivity.teamNumText.getText().toString();
                     }
@@ -204,20 +202,79 @@ public class save extends Fragment implements View.OnClickListener{
                     if (MainActivity.matchNumText.getText().toString() != null){
                         MainActivity.matchNumber = MainActivity.matchNumText.getText().toString();
                     }
+                    if (MainActivity.scoutNameText.getText().toString() != null){
+                        MainActivity.scoutName = MainActivity.scoutNameText.getText().toString();
+                    }
+                    MainActivity.alliance = Auto.position;
+                    if (MainActivity.AutoDocked == 0 && MainActivity.AutoEngaged == 1 && MainActivity.Parking == 0){
+                        autoChargeStation = "Engaged";
+                    } else if (MainActivity.AutoDocked == 1 && MainActivity.AutoEngaged == 0 && MainActivity.Parking == 0){
+                        autoChargeStation = "Docked";
+                    } else {
+                        autoChargeStation = "Not on charging station";
+                        attemptedChargeAuto = false;
+                    }
 
-
+                    if (MainActivity.TeleopEngaged == 1){
+                        teleopChargeStation = "Engaged";
+                    } else if (MainActivity.TeleopDocked == 1 ){
+                        teleopChargeStation = "Docked";
+                    } else if (MainActivity.Parking == 1){
+                        teleopChargeStation = "In community";
+                    } else if (MainActivity.NotInCommunity == 1){
+                        teleopChargeStation = "Not in Community";
+                    }else {
+                        attemptedCharge = false;
+                    }
                 }
-                catch (Exception e){
-                    System.out.println(e.getMessage());
-                }
+                    catch (Exception e){
+                        System.out.println(e.getMessage());
+                    }
+                    if (MainActivity.mobility == 1){mobility = true;} else {mobility = false;}
 
+                    if (MainActivity.Parking == 1){parking = true;} else {parking = false;}
 
-                System.out.println(MainActivity.teamNumber);
-                System.out.println(MainActivity.matchNumber);
-                System.out.println(MainActivity.defendedOnByNumber);
+                    if (MainActivity.groundPickup == 1){gP = true;} else {gP = false;}
 
-                data += MainActivity.teamNumber + "," + MainActivity.matchNumber + ","
-                        /* Auto */   + MainActivity.mobility +  "," + MainActivity.alliance +  "," + MainActivity.scoutName;
+                    if (MainActivity.playerStation == 1){pS = true;} else {pS = false;}
+
+                    if (MainActivity.playedDefense == 1){pD = true;} else {pD = false;}
+
+                    if (MainActivity.preventsScoring == 1){pScore = true;} else {pScore = false;}
+
+                    if (MainActivity.preventsScoring == 1){dO = true;} else {dO = false;}
+
+                    if (MainActivity.effectiveDefense == 1){eD = true;} else {eD = false;}
+
+                    if (MainActivity.AutoChargeAttempt == 1){aACS = true;} else {aACS = false;}
+
+                    System.out.println(MainActivity.teamNumber);
+                    System.out.println(MainActivity.matchNumber);
+
+                    data = "{" +
+                            "\"e\":\"" + MainActivity.eventKey + "\"," +
+                            "\"sN\":\"" + MainActivity.scoutName + "\"," +
+                            "\"mN\":\"" + MainActivity.matchNumber + "\"," +
+                            "\"p\":\"" + Auto.alliancePos.getSelectedItem().toString() + "\"," +
+                            "\"tN\":\"" + MainActivity.teamNumber + "\"," +
+                            "\"mOC\":\"" + bSB(mobility) + "\"," +
+                            "\"aACS\":\"" + bSB(aACS) + "\"," +
+                            "\"aCS\":\"" + autoChargeStation + "\"," +
+                            "\"aTCS\":\"" + bSB(attemptedCharge) + "\"," +
+                            "\"tCS\":\"" + teleopChargeStation + "\"," +
+                            "\"pFG\":\"" + bSB(gP) + "\"," +
+                            "\"pFPS\":\"" + bSB(pS) + "\"," +
+                            "\"rOA\":\"" + Arrays.toString(MainActivity.autoUpperNodes).replaceAll("[\\[\\],\\s]", "") + "\"," +
+                            "\"rTwA\":\"" + Arrays.toString(MainActivity.autoMiddleNodes).replaceAll("[\\[\\],\\s]", "") + "\"," +
+                            "\"rThA\":\"" + Arrays.toString(MainActivity.autoHybridNodes).replaceAll("[\\[\\],\\s]", "") + "\"," +
+                            "\"rOT\":\"" + Arrays.toString(MainActivity.teleopUpperNodes).replaceAll("[\\[\\],\\s]", "") + "\"," +
+                            "\"rTwT\":\"" + Arrays.toString(MainActivity.teleopMiddleNodes).replaceAll("[\\[\\],\\s]", "") + "\"," +
+                            "\"rThT\":\"" + Arrays.toString(MainActivity.teleopHybridNodes).replaceAll("[\\[\\],\\s]", "") + "\"," +
+                            "\"pD\":\"" + bSB(pD) + "\"," +
+                            "\"pS\":\"" + bSB(pScore) + "\"," +
+                            "\"dO\":\"" + bSB(pD) + "\"," +
+                            "\"eD\":\"" + bSB(eD) + "\"," +
+                            "\"mK\":\"" + MainActivity.eventKey +"_" + MainActivity.matchNumber + "\"}";
 
 
                 // Create and save file

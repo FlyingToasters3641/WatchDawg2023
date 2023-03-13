@@ -199,7 +199,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
             case R.id.coneNode8:
                 if(middleNodes[2] == 0) {
                     middleNodes[2] = 1;
-                    MainActivity.teleopMiddleNodes[0] = 1;
+                    MainActivity.teleopMiddleNodes[2] = 1;
                     view.findViewById(R.id.coneNode8).setBackgroundColor(Color.parseColor("#cc9602"));
                 } else if (middleNodes[2] == 1) {
                     middleNodes[2] = 0;

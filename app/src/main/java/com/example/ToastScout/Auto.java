@@ -212,7 +212,7 @@ public class Auto extends Fragment implements View.OnClickListener {
             case R.id.coneNode8:
                 if(middleNodes[2] == 0) {
                     middleNodes[2] = 1;
-                    MainActivity.autoMiddleNodes[0] = 1;
+                    MainActivity.autoMiddleNodes[2] = 1;
                     view.findViewById(R.id.coneNode8).setBackgroundColor(Color.parseColor("#cc9602"));
                 } else if (middleNodes[2] == 1) {
                     middleNodes[2] = 0;
