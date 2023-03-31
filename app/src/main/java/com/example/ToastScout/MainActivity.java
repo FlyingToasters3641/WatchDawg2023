@@ -190,6 +190,12 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(MainActivity.AutoEngaged);
                 System.out.println(MainActivity.AutoDocked);}
                 break;
+            case R.id.AutoChargeNot:
+                if(MainActivity.AutoChargeAttempt==1){
+                    AutoRadioGroup.clearCheck();
+                    MainActivity.AutoChargeAttempt=0;}
+                else {MainActivity.AutoChargeAttempt = 0;}
+                break;
             case R.id.TeleopEngaged:
 
                 if(MainActivity.TeleopEngaged==1){

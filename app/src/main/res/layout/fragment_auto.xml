@@ -261,7 +261,7 @@
             android:onClick="onClick" />
 
         <Button
-            android:id="@+id/coneNode5"
+            android:id="@+id/coneNode4"
             style="@style/ConeNode"
             android:layout_width="60dp"
             android:layout_height="100dp"
@@ -272,7 +272,7 @@
             android:onClick="onClick" />
 
         <Button
-            android:id="@+id/coneNode4"
+            android:id="@+id/coneNode5"
             style="@style/ConeNode"
             android:layout_width="60dp"
             android:layout_height="100dp"

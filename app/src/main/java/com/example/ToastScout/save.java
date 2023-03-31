@@ -138,17 +138,13 @@ public class save extends Fragment implements View.OnClickListener{
                 if (MainActivity.preventsScoring == 1){pScore = true;} else {pScore = false;}
 
                 Boolean dO = false;
-                if (MainActivity.preventsScoring == 1){dO = true;} else {dO = false;}
+                if (MainActivity.defendsOften == 1){dO = true;} else {dO = false;}
 
                 Boolean eD = false;
                 if (MainActivity.effectiveDefense == 1){eD = true;} else {eD = false;}
 
                 Boolean aACS = false;
-                if (MainActivity.AutoChargeAttempt == 1){aACS = true;} else {aACS = false;}
-
-
-
-
+                if (MainActivity.AutoChargeAttempt == 1 || MainActivity.AutoDocked == 1 || MainActivity.AutoEngaged == 1){aACS = true;} else {aACS = false;}
 
                 data = "{" +
                         "\"e\":\"" + MainActivity.eventKey + "\"," +
@@ -171,7 +167,7 @@ public class save extends Fragment implements View.OnClickListener{
                         "\"rThT\":\"" + Arrays.toString(MainActivity.teleopHybridNodes).replaceAll("[\\[\\],\\s]", "") + "\"," +
                         "\"pD\":\"" + bSB(pD) + "\"," +
                         "\"pS\":\"" + bSB(pScore) + "\"," +
-                        "\"dO\":\"" + bSB(pD) + "\"," +
+                        "\"dO\":\"" + bSB(dO) + "\"," +
                         "\"eD\":\"" + bSB(eD) + "\"," +
                         "\"mK\":\"" + MainActivity.eventKey +"_" + MainActivity.matchNumber + "\"}";
 
@@ -213,7 +209,12 @@ public class save extends Fragment implements View.OnClickListener{
                 ivOutput.setImageBitmap(bitmap);
 
                 break;
-
+            case R.id.newMatch2:
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                MainActivity.eventKey = HomeScreen.eventKeyText.getText().toString();
+                break;
         }
     }
 
