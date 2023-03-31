@@ -68,7 +68,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(upperNodes[0] == 0) {
                     upperNodes[0] = 1;
                     MainActivity.teleopUpperNodes[0] = 1;
-                    view.findViewById(R.id.coneNode1).setBackgroundColor(Color.parseColor("#cc9602"));
+                    view.findViewById(R.id.coneNode1).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (upperNodes[0] == 1) {
                     upperNodes[0] = 0;
                     MainActivity.teleopUpperNodes[0] = 0;
@@ -80,7 +80,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(upperNodes[1] == 0){
                     upperNodes[1] = 2;
                     MainActivity.teleopUpperNodes[1] = 2;
-                    view.findViewById(R.id.cubeNode1).setBackgroundColor(Color.parseColor("#bb00ff"));
+                    view.findViewById(R.id.cubeNode1).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (upperNodes[1] == 2) {
                     upperNodes[1] = 0;
                     MainActivity.teleopUpperNodes[1] = 0;
@@ -92,7 +92,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(upperNodes[2] == 0) {
                     upperNodes[2] = 1;
                     MainActivity.teleopUpperNodes[2] = 1;
-                    view.findViewById(R.id.coneNode2).setBackgroundColor(Color.parseColor("#cc9602"));
+                    view.findViewById(R.id.coneNode2).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (upperNodes[2] == 1) {
                     upperNodes[2] = 0;
                     MainActivity.teleopUpperNodes[2] = 0;
@@ -104,7 +104,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(upperNodes[3] == 0) {
                     upperNodes[3] = 1;
                     MainActivity.teleopUpperNodes[3] = 1;
-                    view.findViewById(R.id.coneNode3).setBackgroundColor(Color.parseColor("#cc9602"));
+                    view.findViewById(R.id.coneNode3).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (upperNodes[3] == 1) {
                     upperNodes[3] = 0;
                     MainActivity.teleopUpperNodes[3] = 0;
@@ -116,7 +116,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(upperNodes[4] == 0){
                     upperNodes[4] = 2;
                     MainActivity.teleopUpperNodes[4] = 2;
-                    view.findViewById(R.id.cubeNode2).setBackgroundColor(Color.parseColor("#bb00ff"));
+                    view.findViewById(R.id.cubeNode2).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (upperNodes[4] == 2) {
                     upperNodes[4] = 0;
                     MainActivity.teleopUpperNodes[4] = 0;
@@ -128,7 +128,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(upperNodes[5] == 0) {
                     upperNodes[5] = 1;
                     MainActivity.teleopUpperNodes[5] = 1;
-                    view.findViewById(R.id.coneNode4).setBackgroundColor(Color.parseColor("#cc9602"));
+                    view.findViewById(R.id.coneNode4).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (upperNodes[5] == 1) {
                     upperNodes[5] = 0;
                     MainActivity.teleopUpperNodes[5] = 0;
@@ -140,7 +140,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(upperNodes[6] == 0) {
                     upperNodes[6] = 1;
                     MainActivity.teleopUpperNodes[6] = 1;
-                    view.findViewById(R.id.coneNode5).setBackgroundColor(Color.parseColor("#cc9602"));
+                    view.findViewById(R.id.coneNode5).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (upperNodes[6] == 1) {
                     upperNodes[6] = 0;
                     MainActivity.teleopUpperNodes[6] = 0;
@@ -152,7 +152,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(upperNodes[7] == 0){
                     upperNodes[7] = 2;
                     MainActivity.teleopUpperNodes[7] = 2;
-                    view.findViewById(R.id.cubeNode3).setBackgroundColor(Color.parseColor("#bb00ff"));
+                    view.findViewById(R.id.cubeNode3).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (upperNodes[7] == 2) {
                     upperNodes[7] = 0;
                     MainActivity.teleopUpperNodes[7] = 0;
@@ -164,7 +164,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(upperNodes[8] == 0) {
                     upperNodes[8] = 1;
                     MainActivity.teleopUpperNodes[8] = 1;
-                    view.findViewById(R.id.coneNode6).setBackgroundColor(Color.parseColor("#cc9602"));
+                    view.findViewById(R.id.coneNode6).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (upperNodes[8] == 1) {
                     upperNodes[5] = 0;
                     MainActivity.teleopUpperNodes[8] = 0;
@@ -176,7 +176,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(middleNodes[0] == 0) {
                     middleNodes[0] = 1;
                     MainActivity.teleopMiddleNodes[0] = 1;
-                    view.findViewById(R.id.coneNode7).setBackgroundColor(Color.parseColor("#cc9602"));
+                    view.findViewById(R.id.coneNode7).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (middleNodes[0] == 1) {
                     middleNodes[0] = 0;
                     MainActivity.teleopMiddleNodes[0] = 0;
@@ -188,7 +188,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(middleNodes[1] == 0){
                     middleNodes[1] = 2;
                     MainActivity.teleopMiddleNodes[1] = 2;
-                    view.findViewById(R.id.cubeNode4).setBackgroundColor(Color.parseColor("#bb00ff"));
+                    view.findViewById(R.id.cubeNode4).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (middleNodes[1] == 2) {
                     middleNodes[1] = 0;
                     MainActivity.teleopMiddleNodes[1] = 0;
@@ -200,7 +200,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(middleNodes[2] == 0) {
                     middleNodes[2] = 1;
                     MainActivity.teleopMiddleNodes[2] = 1;
-                    view.findViewById(R.id.coneNode8).setBackgroundColor(Color.parseColor("#cc9602"));
+                    view.findViewById(R.id.coneNode8).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (middleNodes[2] == 1) {
                     middleNodes[2] = 0;
                     MainActivity.teleopMiddleNodes[2] = 0;
@@ -212,7 +212,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(middleNodes[3] == 0) {
                     middleNodes[3] = 1;
                     MainActivity.teleopMiddleNodes[3] = 1;
-                    view.findViewById(R.id.coneNode9).setBackgroundColor(Color.parseColor("#cc9602"));
+                    view.findViewById(R.id.coneNode9).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (middleNodes[3] == 1) {
                     middleNodes[3] = 0;
                     MainActivity.teleopMiddleNodes[3] = 0;
@@ -224,7 +224,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(middleNodes[4] == 0){
                     middleNodes[4] = 2;
                     MainActivity.teleopMiddleNodes[4] = 2;
-                    view.findViewById(R.id.cubeNode5).setBackgroundColor(Color.parseColor("#bb00ff"));
+                    view.findViewById(R.id.cubeNode5).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (middleNodes[4] == 2) {
                     middleNodes[4] = 0;
                     MainActivity.teleopMiddleNodes[4] = 0;
@@ -236,7 +236,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(middleNodes[5] == 0) {
                     middleNodes[5] = 1;
                     MainActivity.teleopMiddleNodes[5] = 1;
-                    view.findViewById(R.id.coneNode10).setBackgroundColor(Color.parseColor("#cc9602"));
+                    view.findViewById(R.id.coneNode10).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (middleNodes[5] == 1) {
                     middleNodes[5] = 0;
                     MainActivity.teleopMiddleNodes[5] = 0;
@@ -248,7 +248,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(middleNodes[6] == 0) {
                     middleNodes[6] = 1;
                     MainActivity.teleopMiddleNodes[6] = 1;
-                    view.findViewById(R.id.coneNode11).setBackgroundColor(Color.parseColor("#cc9602"));
+                    view.findViewById(R.id.coneNode11).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (middleNodes[6] == 1) {
                     middleNodes[6] = 0;
                     MainActivity.teleopMiddleNodes[6] = 0;
@@ -260,7 +260,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(middleNodes[7] == 0){
                     middleNodes[7] = 2;
                     MainActivity.teleopMiddleNodes[7] = 2;
-                    view.findViewById(R.id.cubeNode6).setBackgroundColor(Color.parseColor("#bb00ff"));
+                    view.findViewById(R.id.cubeNode6).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (middleNodes[7] == 2) {
                     middleNodes[7] = 0;
                     MainActivity.teleopMiddleNodes[7] = 0;
@@ -272,7 +272,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 if(middleNodes[8] == 0) {
                     middleNodes[8] = 1;
                     MainActivity.teleopMiddleNodes[8] = 1;
-                    view.findViewById(R.id.coneNode12).setBackgroundColor(Color.parseColor("#cc9602"));
+                    view.findViewById(R.id.coneNode12).setBackgroundColor(Color.parseColor("#fc0324"));
                 } else if (middleNodes[8] == 1) {
                     middleNodes[8] = 0;
                     MainActivity.teleopMiddleNodes[8] = 0;
